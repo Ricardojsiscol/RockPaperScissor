@@ -4,58 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Rock, paper, scissors game</title>
+	<script src="js/main.js" defer></script>
+	<link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-	<script>
-		function getComputerChoice(){
-			let choice = Math.floor(Math.random() * 3) + 1;
-			if (choice == 1)
-				return "rock";
-			else if (choice == 2)
-				return "paper";
-			else
-				return "scissors";
-		}
-
-		function playRound(playerSelection, computerSelection){
-			if (playerSelection == computerSelection)
-				return "It's a tie!";
-			else if (playerSelection == "rock"){
-				if	(computerSelection == "paper")
-					return "You lose!, paper beats rock";
-				else if (computerSelection == "scissors")
-					return "You win!, rock beats scissors";
-			}
-			else if (playerSelection == "paper"){
-				if (computerSelection == "scissors")
-					return "You lose!, scissors beat paper";
-				else if (computerSelection == "rock")
-					return "You win!, paper beats rock";
-			}
-			else if (playerSelection == "scissors"){
-				if (computerSelection == "rock")
-					return "You lose!, rock beat scissors";
-				else if (computerSelection == "paper")
-					return "You win!, scissors beat paper";
-			}
-		}
-		
-		function playGame(){
-			let i = 0;
-
-			while (i < 5){
-				let pChoice = prompt("Please choose rock, paper or scissors");
-				pChoice.toLowerCase();
-				if (pChoice != "rock" && pChoice != "paper" && pChoice != "scissors")
-					alert("Wrong input, please indicate your choice again");
-				else{
-					let cChoice = getComputerChoice();
-					console.log(playRound(pChoice, cChoice));
-					i++;
-				}
-			}
-		}
-		playGame();
-	</script>	
+<body id="body">	
+	<h1>Let's play Rock, Paper, Scissors!</h1>
+	<span>Make your choice:</span>
+	<div class="btn-container">
+		<button id="rock"></button>
+		<button id="paper"></button>
+		<button id="scissors"></button>
+	</div>
+	<p id="pc_choice_info">"Game information will be shown here"</p>
+	<div class="results">
+		<p>Player points: <span id="player_points">0</span></p>
+		<p>Computer points: <span id="pc_points">0</span></p>	
+	</div>
 </body>
 </html>
