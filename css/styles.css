@@ -72,6 +72,7 @@ button:hover{
 
 @media only screen and (max-width: 600px){
 	h1{
+		text-align: center;
 		width: 100%;
 	}
 	.btn-container {
@@ -82,7 +83,11 @@ button:hover{
 		width: 300px;
 	}
 	.results{
-		width: 400px;
+		width: 80%;
 	}
-
+	#pc_choice_info{
+		display: flex;
+		justify-content: center;
+		width: 80%;
+	}
 }
