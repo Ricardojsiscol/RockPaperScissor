@@ -71,12 +71,18 @@ button:hover{
 }
 
 @media only screen and (max-width: 600px){
+	h1{
+		width: 100%;
+	}
 	.btn-container {
 		width: 300px;
 	}
 
 	body span{
 		width: 300px;
+	}
+	.results{
+		width: 400px;
 	}
 
 }
